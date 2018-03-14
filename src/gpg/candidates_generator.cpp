@@ -91,12 +91,14 @@ void CandidatesGenerator::preprocessPointCloud(CloudCamera& cloud_cam)
   // Indices into point cloud given
   else
   {
+    // std::cout << "Sample index size: " << cloud_cam.getSampleIndices().size() << ".\n"; //NEW
     if (params_.num_samples_ > 0 && params_.num_samples_ < cloud_cam.getSampleIndices().size())
     {
       std::vector<int> indices_rand(params_.num_samples_);
       for (int i=0; i < params_.num_samples_; i++)
         indices_rand[i] = cloud_cam.getSampleIndices()[rand() % cloud_cam.getSampleIndices().size()];
       cloud_cam.setSampleIndices(indices_rand);
+      // std::cout << "First sample index: " << cloud_cam.getSampleIndices()[0] << ".\n"; //NEW
       std::cout << "Subsampled " << indices_rand.size() << " indices.\n";
     }
     else
