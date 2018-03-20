@@ -70,7 +70,7 @@ void GraspSet::evaluateHypotheses(const PointList& point_list, const LocalFrame&
     PointList point_list_frame = point_list.rotatePointList(frame_rot.transpose());
 
     // Crop points on hand height.
-    PointList point_list_cropped = point_list_frame.cropByHandHeight(hand_geometry_.height_);
+    PointList point_list_cropped = point_list_frame.cropByHandHeight(hand_geometry_.height_single_);
 
     // Evaluate finger placements for this orientation.
     finger_hand.evaluateFingers(point_list_cropped.getPoints(), hand_geometry_.init_bite_);

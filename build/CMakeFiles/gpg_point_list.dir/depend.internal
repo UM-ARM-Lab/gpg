@@ -4,7 +4,7 @@
 CMakeFiles/gpg_point_list.dir/src/gpg/point_list.cpp.o
  ../include/gpg/eigen_utils.h
  ../include/gpg/point_list.h
- /home/messingj/Documents/grasping/gpg/src/gpg/point_list.cpp
+ /home/messingj/Documents/gpg/src/gpg/point_list.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense

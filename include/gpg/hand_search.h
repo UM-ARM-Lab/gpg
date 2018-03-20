@@ -90,7 +90,8 @@ public:
     double finger_width_; ///< the width of the robot hand fingers
     double hand_outer_diameter_; ///< the maximum robot hand aperture
     double hand_depth_; ///< the hand depth (length of fingers)
-    double hand_height_; ///< the hand extends plus/minus this value along the hand axis
+    double hand_height_single_; ///< the hand extends plus/minus this value along the hand axis
+    double hand_height_double_;
     double init_bite_; ///< the minimum object height
   };
 

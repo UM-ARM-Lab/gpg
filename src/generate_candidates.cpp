@@ -47,13 +47,15 @@ int main(int argc, char* argv[])
   double finger_width = config_file.getValueOfKey<double>("finger_width", 0.01);
   double hand_outer_diameter  = config_file.getValueOfKey<double>("hand_outer_diameter", 0.12);
   double hand_depth = config_file.getValueOfKey<double>("hand_depth", 0.06);
-  double hand_height  = config_file.getValueOfKey<double>("hand_height", 0.02);
+  double hand_height_single  = config_file.getValueOfKey<double>("hand_height_single", 0.02);
+  double hand_height_double  = config_file.getValueOfKey<double>("hand_height_double", 0.04);
   double init_bite  = config_file.getValueOfKey<double>("init_bite", 0.01);
 
   std::cout << "finger_width: " << finger_width << "\n";
   std::cout << "hand_outer_diameter: " << hand_outer_diameter << "\n";
   std::cout << "hand_depth: " << hand_depth << "\n";
-  std::cout << "hand_height: " << hand_height << "\n";
+  std::cout << "hand_height_single: " << hand_height_single << "\n";
+  std::cout << "hand_height_double: " << hand_height_double << "\n";
   std::cout << "init_bite: " << init_bite << "\n";
 
   bool voxelize = config_file.getValueOfKey<bool>("voxelize", true);
@@ -96,7 +98,8 @@ int main(int argc, char* argv[])
   hand_search_params.finger_width_ = finger_width;
   hand_search_params.hand_outer_diameter_ = hand_outer_diameter;
   hand_search_params.hand_depth_ = hand_depth;
-  hand_search_params.hand_height_ = hand_height;
+  hand_search_params.hand_height_single_ = hand_height_single;
+  hand_search_params.hand_height_double_ = hand_height_double;
   hand_search_params.init_bite_ = init_bite;
   hand_search_params.nn_radius_frames_ = nn_radius;
   hand_search_params.num_orientations_ = num_orientations;

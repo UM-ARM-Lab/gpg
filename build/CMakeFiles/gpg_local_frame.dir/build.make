@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/messingj/Documents/grasping/gpg
+CMAKE_SOURCE_DIR = /home/messingj/Documents/gpg
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/messingj/Documents/grasping/gpg/build
+CMAKE_BINARY_DIR = /home/messingj/Documents/gpg/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/gpg_local_frame.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/gpg_local_frame.dir/flags.make
 
 CMakeFiles/gpg_local_frame.dir/src/gpg/local_frame.cpp.o: CMakeFiles/gpg_local_frame.dir/flags.make
 CMakeFiles/gpg_local_frame.dir/src/gpg/local_frame.cpp.o: ../src/gpg/local_frame.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/messingj/Documents/grasping/gpg/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/gpg_local_frame.dir/src/gpg/local_frame.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gpg_local_frame.dir/src/gpg/local_frame.cpp.o -c /home/messingj/Documents/grasping/gpg/src/gpg/local_frame.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/messingj/Documents/gpg/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/gpg_local_frame.dir/src/gpg/local_frame.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gpg_local_frame.dir/src/gpg/local_frame.cpp.o -c /home/messingj/Documents/gpg/src/gpg/local_frame.cpp
 
 CMakeFiles/gpg_local_frame.dir/src/gpg/local_frame.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gpg_local_frame.dir/src/gpg/local_frame.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/messingj/Documents/grasping/gpg/src/gpg/local_frame.cpp > CMakeFiles/gpg_local_frame.dir/src/gpg/local_frame.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/messingj/Documents/gpg/src/gpg/local_frame.cpp > CMakeFiles/gpg_local_frame.dir/src/gpg/local_frame.cpp.i
 
 CMakeFiles/gpg_local_frame.dir/src/gpg/local_frame.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gpg_local_frame.dir/src/gpg/local_frame.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/messingj/Documents/grasping/gpg/src/gpg/local_frame.cpp -o CMakeFiles/gpg_local_frame.dir/src/gpg/local_frame.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/messingj/Documents/gpg/src/gpg/local_frame.cpp -o CMakeFiles/gpg_local_frame.dir/src/gpg/local_frame.cpp.s
 
 CMakeFiles/gpg_local_frame.dir/src/gpg/local_frame.cpp.o.requires:
 
@@ -91,7 +91,7 @@ gpg_local_frame_EXTERNAL_OBJECTS =
 libgpg_local_frame.a: CMakeFiles/gpg_local_frame.dir/src/gpg/local_frame.cpp.o
 libgpg_local_frame.a: CMakeFiles/gpg_local_frame.dir/build.make
 libgpg_local_frame.a: CMakeFiles/gpg_local_frame.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/messingj/Documents/grasping/gpg/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libgpg_local_frame.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/messingj/Documents/gpg/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libgpg_local_frame.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/gpg_local_frame.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gpg_local_frame.dir/link.txt --verbose=$(VERBOSE)
 
@@ -109,6 +109,6 @@ CMakeFiles/gpg_local_frame.dir/clean:
 .PHONY : CMakeFiles/gpg_local_frame.dir/clean
 
 CMakeFiles/gpg_local_frame.dir/depend:
-	cd /home/messingj/Documents/grasping/gpg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/messingj/Documents/grasping/gpg /home/messingj/Documents/grasping/gpg /home/messingj/Documents/grasping/gpg/build /home/messingj/Documents/grasping/gpg/build /home/messingj/Documents/grasping/gpg/build/CMakeFiles/gpg_local_frame.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/messingj/Documents/gpg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/messingj/Documents/gpg /home/messingj/Documents/gpg /home/messingj/Documents/gpg/build /home/messingj/Documents/gpg/build /home/messingj/Documents/gpg/build/CMakeFiles/gpg_local_frame.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/gpg_local_frame.dir/depend
 

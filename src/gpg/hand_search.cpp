@@ -11,7 +11,7 @@ HandSearch::HandSearch(Parameters params) : params_(params), plots_samples_(fals
 {
   // Calculate radius for nearest neighbor search.
   Eigen::Vector3d hand_dims;
-  hand_dims << params_.hand_outer_diameter_ - params_.finger_width_, params_.hand_depth_, params_.hand_height_ / 2.0;
+  hand_dims << params_.hand_outer_diameter_ - params_.finger_width_, params_.hand_depth_, params_.hand_height_single_ / 2.0;
   nn_radius_ = hand_dims.maxCoeff();
 }
 
@@ -186,7 +186,7 @@ std::vector<GraspSet> HandSearch::evaluateHands(const CloudCamera& cloud_cam, co
   PointList point_list(points, cloud_cam.getNormals(), cloud_cam.getCameraSource(), cloud_cam.getViewPoints());
   PointList nn_points;
   GraspSet::HandGeometry hand_geom(params_.finger_width_, params_.hand_outer_diameter_, params_.hand_depth_,
-    params_.hand_height_, params_.init_bite_);
+    params_.hand_height_single_, params_.hand_height_double_, params_.init_bite_);
 //  GraspSet hand_set(hand_geom, angles, params_.rotation_axis_);
 
 #ifdef _OPENMP // parallelization using OpenMP
@@ -233,7 +233,7 @@ bool HandSearch::reevaluateHypothesis(const PointList& point_list, const Grasp& 
 {
   // Transform points into hand frame and crop them on <hand_height>.
   PointList point_list_frame = point_list.rotatePointList(hand.getFrame().transpose());
-  point_list_cropped = point_list_frame.cropByHandHeight(params_.hand_height_);
+  point_list_cropped = point_list_frame.cropByHandHeight(params_.hand_height_single_);
 
   // Check that the finger placement is possible.
   finger_hand.evaluateFingers(point_list_cropped.getPoints(), hand.getTop(), hand.getFingerPlacementIndex());

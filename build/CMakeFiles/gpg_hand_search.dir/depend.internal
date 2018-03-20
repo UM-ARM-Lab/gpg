@@ -13,7 +13,7 @@ CMakeFiles/gpg_hand_search.dir/src/gpg/hand_search.cpp.o
  ../include/gpg/local_frame.h
  ../include/gpg/plot.h
  ../include/gpg/point_list.h
- /home/messingj/Documents/grasping/gpg/src/gpg/hand_search.cpp
+ /home/messingj/Documents/gpg/src/gpg/hand_search.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense

@@ -5,7 +5,7 @@ CMakeFiles/gpg_antipodal.dir/src/gpg/antipodal.cpp.o
  ../include/gpg/antipodal.h
  ../include/gpg/eigen_utils.h
  ../include/gpg/point_list.h
- /home/messingj/Documents/grasping/gpg/src/gpg/antipodal.cpp
+ /home/messingj/Documents/gpg/src/gpg/antipodal.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense

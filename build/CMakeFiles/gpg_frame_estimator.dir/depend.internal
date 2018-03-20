@@ -6,7 +6,7 @@ CMakeFiles/gpg_frame_estimator.dir/src/gpg/frame_estimator.cpp.o
  ../include/gpg/eigen_utils.h
  ../include/gpg/frame_estimator.h
  ../include/gpg/local_frame.h
- /home/messingj/Documents/grasping/gpg/src/gpg/frame_estimator.cpp
+ /home/messingj/Documents/gpg/src/gpg/frame_estimator.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense

@@ -4,7 +4,7 @@
 CMakeFiles/gpg_grasp.dir/src/gpg/grasp.cpp.o
  ../include/gpg/finger_hand.h
  ../include/gpg/grasp.h
- /home/messingj/Documents/grasping/gpg/src/gpg/grasp.cpp
+ /home/messingj/Documents/gpg/src/gpg/grasp.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense

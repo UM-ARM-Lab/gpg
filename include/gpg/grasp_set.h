@@ -136,15 +136,16 @@ class GraspSet
         double finger_width_; ///< the width of the robot hand fingers
         double outer_diameter_; ///< the maximum robot hand aperture
         double depth_; ///< the hand depth (length of fingers)
-        double height_; ///< the hand extends plus/minus this value along the hand axis
+        double height_single_; ///< the hand extends plus/minus this value along the hand axis
+        double height_double_;
         double init_bite_; ///< the minimum object height
 
-        HandGeometry() : finger_width_(0.0), outer_diameter_(0.0), depth_(0.0), height_(0.0), init_bite_(0.0) { }
+        HandGeometry() : finger_width_(0.0), outer_diameter_(0.0), depth_(0.0), height_single_(0.0), height_double_(0.0), init_bite_(0.0) { }
 
-        HandGeometry(double finger_width, double outer_diameter, double hand_depth, double hand_height,
+        HandGeometry(double finger_width, double outer_diameter, double hand_depth, double hand_height_single, double hand_height_double,
           double init_bite)
         : finger_width_(finger_width), outer_diameter_(outer_diameter), depth_(hand_depth),
-          height_(hand_height), init_bite_(init_bite) {  }
+          height_single_(hand_height_single), height_double_(hand_height_double), init_bite_(init_bite) {  }
     };
 
     /**

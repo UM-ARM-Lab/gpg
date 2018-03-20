@@ -2,7 +2,7 @@
 
 
 void Plot::plotFingers3D(const std::vector<GraspSet>& hand_set_list, const PointCloudRGBA::Ptr& cloud,
-  std::string str, double outer_diameter, double finger_width, double hand_depth, double hand_height) const
+  std::string str, double outer_diameter, double finger_width, double hand_depth, double hand_height_single, double hand_height_double) const
 {
   std::vector<Grasp> hands;
 
@@ -17,18 +17,18 @@ void Plot::plotFingers3D(const std::vector<GraspSet>& hand_set_list, const Point
     }
   }
 
-  plotFingers3D(hands, cloud, str, outer_diameter, finger_width, hand_depth, hand_height);
+  plotFingers3D(hands, cloud, str, outer_diameter, finger_width, hand_depth, hand_height_single, hand_height_double);
 }
 
 
 void Plot::plotFingers3D(const std::vector<Grasp>& hand_list, const PointCloudRGBA::Ptr& cloud,
-  std::string str, double outer_diameter, double finger_width, double hand_depth, double hand_height) const
+  std::string str, double outer_diameter, double finger_width, double hand_depth, double hand_height_single, double hand_height_double) const
 {
   boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer = createViewer(str);
 
   for (int i = 0; i < hand_list.size(); i++)
   {
-    plotHand3D(viewer, hand_list[i], outer_diameter, finger_width, hand_depth, hand_height, i);
+    plotHand3D(viewer, hand_list[i], outer_diameter, finger_width, hand_depth, hand_height_single, hand_height_double, i);
   }
 
   pcl::visualization::PointCloudColorHandlerRGBField<pcl::PointXYZRGBA> rgb(cloud);
@@ -41,7 +41,7 @@ void Plot::plotFingers3D(const std::vector<Grasp>& hand_list, const PointCloudRG
 
 
 void Plot::plotHand3D(boost::shared_ptr<pcl::visualization::PCLVisualizer>& viewer, const Grasp& hand,
-  double outer_diameter, double finger_width, double hand_depth, double hand_height, int idx) const
+  double outer_diameter, double finger_width, double hand_depth, double hand_height_single, double hand_height_double, int idx) const
 {
   double hw = 0.5*outer_diameter;
   double base_depth = 0.02;
@@ -58,10 +58,10 @@ void Plot::plotHand3D(boost::shared_ptr<pcl::visualization::PCLVisualizer>& view
 
   std::string num = boost::lexical_cast<std::string>(idx);
 
-  plotCube(viewer, left_center, quat, hand_depth, finger_width, hand_height, "left_finger_" + num);
-  plotCube(viewer, right_center, quat, hand_depth, finger_width, hand_height, "right_finger_" + num);
-  plotCube(viewer, base_center, quat, base_depth, outer_diameter, hand_height, "base_" + num);
-  plotCube(viewer, approach_center, quat, approach_depth, finger_width, 0.5*hand_height, "approach_" + num);
+  plotCube(viewer, left_center, quat, hand_depth, finger_width, hand_height_double, "left_finger_" + num);
+  plotCube(viewer, right_center, quat, hand_depth, finger_width, hand_height_single, "right_finger_" + num);
+  plotCube(viewer, base_center, quat, base_depth, outer_diameter, hand_height_single, "base_" + num);
+  plotCube(viewer, approach_center, quat, approach_depth, finger_width, 0.5*hand_height_single, "approach_" + num);
 }
 
 

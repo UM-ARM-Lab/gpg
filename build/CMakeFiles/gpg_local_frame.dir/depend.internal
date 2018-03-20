@@ -3,7 +3,7 @@
 
 CMakeFiles/gpg_local_frame.dir/src/gpg/local_frame.cpp.o
  ../include/gpg/local_frame.h
- /home/messingj/Documents/grasping/gpg/src/gpg/local_frame.cpp
+ /home/messingj/Documents/gpg/src/gpg/local_frame.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense

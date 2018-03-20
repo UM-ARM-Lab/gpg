@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/messingj/Documents/grasping/gpg
+CMAKE_SOURCE_DIR = /home/messingj/Documents/gpg
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/messingj/Documents/grasping/gpg/build
+CMAKE_BINARY_DIR = /home/messingj/Documents/gpg/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/gpg_hand_search.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/gpg_hand_search.dir/flags.make
 
 CMakeFiles/gpg_hand_search.dir/src/gpg/hand_search.cpp.o: CMakeFiles/gpg_hand_search.dir/flags.make
 CMakeFiles/gpg_hand_search.dir/src/gpg/hand_search.cpp.o: ../src/gpg/hand_search.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/messingj/Documents/grasping/gpg/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/gpg_hand_search.dir/src/gpg/hand_search.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gpg_hand_search.dir/src/gpg/hand_search.cpp.o -c /home/messingj/Documents/grasping/gpg/src/gpg/hand_search.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/messingj/Documents/gpg/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/gpg_hand_search.dir/src/gpg/hand_search.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gpg_hand_search.dir/src/gpg/hand_search.cpp.o -c /home/messingj/Documents/gpg/src/gpg/hand_search.cpp
 
 CMakeFiles/gpg_hand_search.dir/src/gpg/hand_search.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gpg_hand_search.dir/src/gpg/hand_search.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/messingj/Documents/grasping/gpg/src/gpg/hand_search.cpp > CMakeFiles/gpg_hand_search.dir/src/gpg/hand_search.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/messingj/Documents/gpg/src/gpg/hand_search.cpp > CMakeFiles/gpg_hand_search.dir/src/gpg/hand_search.cpp.i
 
 CMakeFiles/gpg_hand_search.dir/src/gpg/hand_search.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gpg_hand_search.dir/src/gpg/hand_search.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/messingj/Documents/grasping/gpg/src/gpg/hand_search.cpp -o CMakeFiles/gpg_hand_search.dir/src/gpg/hand_search.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/messingj/Documents/gpg/src/gpg/hand_search.cpp -o CMakeFiles/gpg_hand_search.dir/src/gpg/hand_search.cpp.s
 
 CMakeFiles/gpg_hand_search.dir/src/gpg/hand_search.cpp.o.requires:
 
@@ -91,7 +91,7 @@ gpg_hand_search_EXTERNAL_OBJECTS =
 libgpg_hand_search.a: CMakeFiles/gpg_hand_search.dir/src/gpg/hand_search.cpp.o
 libgpg_hand_search.a: CMakeFiles/gpg_hand_search.dir/build.make
 libgpg_hand_search.a: CMakeFiles/gpg_hand_search.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/messingj/Documents/grasping/gpg/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libgpg_hand_search.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/messingj/Documents/gpg/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libgpg_hand_search.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/gpg_hand_search.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gpg_hand_search.dir/link.txt --verbose=$(VERBOSE)
 
@@ -109,6 +109,6 @@ CMakeFiles/gpg_hand_search.dir/clean:
 .PHONY : CMakeFiles/gpg_hand_search.dir/clean
 
 CMakeFiles/gpg_hand_search.dir/depend:
-	cd /home/messingj/Documents/grasping/gpg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/messingj/Documents/grasping/gpg /home/messingj/Documents/grasping/gpg /home/messingj/Documents/grasping/gpg/build /home/messingj/Documents/grasping/gpg/build /home/messingj/Documents/grasping/gpg/build/CMakeFiles/gpg_hand_search.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/messingj/Documents/gpg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/messingj/Documents/gpg /home/messingj/Documents/gpg /home/messingj/Documents/gpg/build /home/messingj/Documents/gpg/build /home/messingj/Documents/gpg/build/CMakeFiles/gpg_hand_search.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/gpg_hand_search.dir/depend
 
