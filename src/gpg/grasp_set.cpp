@@ -83,7 +83,8 @@ void GraspSet::evaluateHypotheses(const PointList& point_list, const LocalFrame&
       // Try to move the hand as deep as possible onto the object.
       int finger_idx = finger_hand.deepenHand(point_list_cropped.getPoints(), hand_geometry_.init_bite_, hand_geometry_.depth_);
 
-      // Calculate points in the closing region of the hand.
+      // Calculate points in the closing region of the hand, ignoring the points added to the point cloud to represent uncertainty/obstacles.
+      // PointList point_list_cropped_original = point_list_cropped.cropByCameraSource(-1);
       std::vector<int> indices_closing = finger_hand.computePointsInClosingRegion(point_list_cropped.getPoints(), finger_idx);
       if (indices_closing.size() == 0)
       {

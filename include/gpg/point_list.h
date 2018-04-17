@@ -105,6 +105,8 @@ class PointList
      */
     PointList cropByHandHeight(double height, int dim = 2) const;
 
+    PointList cropByCameraSource(int cam) const; //NEW
+
     const Eigen::MatrixXi& getCamSource() const
     {
       return cam_source_;

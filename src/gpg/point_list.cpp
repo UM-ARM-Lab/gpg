@@ -57,3 +57,19 @@ PointList PointList::cropByHandHeight(double height, int dim) const
 
   return slice(indices);
 }
+
+// NEW Removes all points with a certain camera number
+PointList PointList::cropByCameraSource(int cam) const
+{
+  std::vector<int> indices(size());
+  int k = 0;
+  for (int i = 0; i < size(); i++)
+  {
+    if (cam_source_(i) != cam)
+    {
+      indices[k] = i;
+      k++;
+    }
+  }
+  return slice(indices);
+}

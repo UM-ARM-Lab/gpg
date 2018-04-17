@@ -12,7 +12,7 @@ HandSearch::HandSearch(Parameters params) : params_(params), plots_samples_(fals
   // Calculate radius for nearest neighbor search.
   Eigen::Vector3d hand_dims;
   hand_dims << params_.hand_outer_diameter_ - params_.finger_width_, params_.hand_depth_, params_.hand_height_single_ / 2.0;
-  nn_radius_ = hand_dims.maxCoeff();
+  nn_radius_ = 1.2*hand_dims.maxCoeff();
 }
 
 
