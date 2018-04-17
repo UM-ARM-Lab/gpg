@@ -63,11 +63,11 @@ class PointList
      * \param points the points (3 x n)
      * \param normals the surface normals associated with the points (3 x n)
      * \param cam_source the camera source for each point (k x n)
+     * \param regions the region of the segmented point cloud
      * \param view_points the origins of the cameras that saw the points (3 x k)
      */
-    PointList(const Eigen::Matrix3Xd& points, const Eigen::Matrix3Xd& normals, const Eigen::MatrixXi& cam_source,
-      const Eigen::Matrix3Xd& view_points)
-      : points_(points), normals_(normals), cam_source_(cam_source), view_points_(view_points) { }
+    PointList(const Eigen::Matrix3Xd& points, const Eigen::Matrix3Xd& normals, const Eigen::MatrixXi& cam_source, const Eigen::MatrixXi& regions, const Eigen::Matrix3Xd& view_points)
+      : points_(points), normals_(normals), cam_source_(cam_source), regions_(regions), view_points_(view_points) { }
 
     /**
      * \brief Constructor.
@@ -105,6 +105,10 @@ class PointList
      */
     PointList cropByHandHeight(double height, int dim = 2) const;
 
+    /**
+     * \brief Crop the points by a certain camera.
+     * \param cam the camera to remove the points of
+     */
     PointList cropByCameraSource(int cam) const; //NEW
 
     const Eigen::MatrixXi& getCamSource() const
@@ -152,6 +156,15 @@ class PointList
       view_points_ = view_points;
     }
 
+    const Eigen::MatrixXi& getRegions() const
+    {
+      return regions_;
+    }
+
+    void setRegions(const Eigen::MatrixXi& regions)
+    {
+      regions_ = regions;
+    }
 
   private:
 
@@ -159,6 +172,7 @@ class PointList
     Eigen::Matrix3Xd normals_; ///< the surface normals of the points (3 x n matrix)
     Eigen::MatrixXi cam_source_; ///< the camera source (k x n matrix of 1s and 0s)
     Eigen::Matrix3Xd view_points_; ///< the camera origins (3 x k matrix)
+    Eigen::MatrixXi regions_; ///< the regions of the segmented point cloud
 };
 
 

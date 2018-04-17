@@ -6,11 +6,25 @@ CloudCamera::CloudCamera()
 {
   view_points_.resize(3,1);
   view_points_ << 0.0, 0.0, 0.0;
+  regions_.resize(1,1);
+  regions_ << 0.0;
   sample_indices_.resize(0);
   samples_.resize(3,0);
   normals_.resize(3,0);
 }
 
+
+CloudCamera::CloudCamera(const PointCloudRGB::Ptr& cloud, const Eigen::MatrixXi& camera_source,
+  const Eigen::Matrix3Xd& view_points, const Eigen::MatrixXi& regions) : cloud_processed_(new PointCloudRGB), cloud_original_(new PointCloudRGB),
+    camera_source_(camera_source), view_points_(view_points), regions_(regions)
+{
+  sample_indices_.resize(0);
+  samples_.resize(3,0);
+  normals_.resize(3,0);
+
+  pcl::copyPointCloud(*cloud, *cloud_original_);
+  *cloud_processed_ = *cloud_original_;
+}
 
 CloudCamera::CloudCamera(const PointCloudRGB::Ptr& cloud, const Eigen::MatrixXi& camera_source,
   const Eigen::Matrix3Xd& view_points) : cloud_processed_(new PointCloudRGB), cloud_original_(new PointCloudRGB),

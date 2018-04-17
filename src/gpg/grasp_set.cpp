@@ -86,6 +86,7 @@ void GraspSet::evaluateHypotheses(const PointList& point_list, const LocalFrame&
       // Calculate points in the closing region of the hand, ignoring the points added to the point cloud to represent uncertainty/obstacles.
       // PointList point_list_cropped_original = point_list_cropped.cropByCameraSource(-1);
       std::vector<int> indices_closing = finger_hand.computePointsInClosingRegion(point_list_cropped.getPoints(), finger_idx);
+      std::cout << "Closing indices: " << indices_closing.size() << "\n";
       if (indices_closing.size() == 0)
       {
         continue;

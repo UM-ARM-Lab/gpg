@@ -125,6 +125,17 @@ public:
    */
   CloudCamera();
 
+  // NEW
+  /**
+   * \brief Constructor for a point cloud with regions
+   * \param cloud the point cloud (of size n)
+   * \param camera_source the camera source for each point in the cloud (size: k x n)
+   * \param view_points the origins of the cameras (size: 3 x k)
+   * \param region the region from the segmented point cloud
+   */
+  CloudCamera(const PointCloudRGB::Ptr& cloud, const Eigen::MatrixXi& camera_source,
+    const Eigen::Matrix3Xd& view_points, const Eigen::MatrixXi& regions);
+
   /**
    * \brief Constructor.
    * \param cloud the point cloud (of size n)
@@ -336,6 +347,24 @@ public:
     view_points_ = view_points;
   }
 
+  /**
+   * \brief Get the regions.
+   * \return the regions of the segmented point cloud the points correspond to
+  */
+  const Eigen::MatrixXi& getRegions() const
+  {
+    return regions_;
+  }
+
+  /**
+   * \brief Set the camera view points.
+   * \return the origins of the cameras (size: 3 x k)
+  */
+  void setRegions(const Eigen::MatrixXi& regions)
+  {
+    regions_ = regions;
+  }
+
 
 private:
 
@@ -353,6 +382,7 @@ private:
   std::vector<int> sample_indices_; ///< the indices into the point cloud used to sample grasp hypotheses
   Eigen::Matrix3Xd samples_; ///< the samples used for finding grasp hypotheses
   Eigen::Matrix3Xd view_points_; ///< the viewpoints of the camera on the cloud
+  Eigen::MatrixXi regions_; ///< the regions each point corresponds to
 };
 
 #endif /* CLOUD_CAMERA_H_ */

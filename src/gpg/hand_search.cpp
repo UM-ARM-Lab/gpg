@@ -88,6 +88,7 @@ std::vector<Grasp> HandSearch::reevaluateHypotheses(const CloudCamera& cloud_cam
 {
   // create KdTree for neighborhood search
   const Eigen::MatrixXi& camera_source = cloud_cam.getCameraSource();
+  const Eigen::MatrixXi& regions = cloud_cam.getRegions();
   const Eigen::Matrix3Xd& cloud_normals = cloud_cam.getNormals();
   const PointCloudRGB::Ptr& cloud = cloud_cam.getCloudProcessed();
   pcl::KdTreeFLANN<pcl::PointXYZRGBA> kdtree;
@@ -108,7 +109,7 @@ std::vector<Grasp> HandSearch::reevaluateHypotheses(const CloudCamera& cloud_cam
   std::vector<int> nn_indices;
   std::vector<float> nn_dists;
   Eigen::Matrix3Xd points = cloud->getMatrixXfMap().block(0, 0, 3, cloud->size()).cast<double>();
-  PointList point_list(points, cloud_normals, camera_source, cloud_cam.getViewPoints());
+  PointList point_list(points, cloud_normals, camera_source, regions, cloud_cam.getViewPoints());
   PointList nn_points;
   std::vector<int> labels(grasps.size()); // -1: not feasible, 0: feasible, >0: see Antipodal class
 
@@ -183,7 +184,7 @@ std::vector<GraspSet> HandSearch::evaluateHands(const CloudCamera& cloud_cam, co
   const PointCloudRGB::Ptr& cloud = cloud_cam.getCloudProcessed();
   Eigen::Matrix3Xd points = cloud->getMatrixXfMap().block(0, 0, 3, cloud->size()).cast<double>();
   std::vector<GraspSet> hand_set_list(frames.size());
-  PointList point_list(points, cloud_cam.getNormals(), cloud_cam.getCameraSource(), cloud_cam.getViewPoints());
+  PointList point_list(points, cloud_cam.getNormals(), cloud_cam.getCameraSource(), cloud_cam.getRegions(), cloud_cam.getViewPoints());
   PointList nn_points;
   GraspSet::HandGeometry hand_geom(params_.finger_width_, params_.hand_outer_diameter_, params_.hand_depth_,
     params_.hand_height_single_, params_.hand_height_double_, params_.init_bite_);
@@ -198,7 +199,11 @@ std::vector<GraspSet> HandSearch::evaluateHands(const CloudCamera& cloud_cam, co
 
     if (kdtree.radiusSearch(sample, nn_radius_, nn_indices, nn_dists) > 0)
     {
+      // std::cout << "VIEWS: " << point_list.getViewPoints() << "\n";
+      // std::cout << "REGIONS: " << point_list.getRegions() << "\n";
       nn_points = point_list.slice(nn_indices);
+      // std::cout << "VIEWS: " << nn_points.getViewPoints() << "\n";
+      // std::cout << "REGIONS: " << nn_points.getRegions() << "\n";
       nn_points.setPoints(nn_points.getPoints() - frames[i].getSample().replicate(1, nn_points.size()));
 
       GraspSet hand_set(hand_geom, angles, params_.rotation_axis_);
